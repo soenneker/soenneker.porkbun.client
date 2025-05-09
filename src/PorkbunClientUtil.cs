@@ -8,7 +8,7 @@ using Soenneker.Utils.HttpClientCache.Abstract;
 namespace Soenneker.Porkbun.Client;
 
 /// <inheritdoc cref="IPorkbunClientUtil"/>
-public class PorkbunClientUtil: IPorkbunClientUtil
+public class PorkbunClientUtil : IPorkbunClientUtil
 {
     private readonly IHttpClientCache _httpClientCache;
 
@@ -19,7 +19,7 @@ public class PorkbunClientUtil: IPorkbunClientUtil
 
     public ValueTask<HttpClient> Get(CancellationToken cancellationToken = default)
     {
-        return _httpClientCache.Get(nameof(PorkbunClientUtil), null, cancellationToken);
+        return _httpClientCache.Get(nameof(PorkbunClientUtil), () => null, cancellationToken);
     }
 
     public void Dispose()

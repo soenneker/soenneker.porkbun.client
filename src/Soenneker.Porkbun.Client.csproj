@@ -14,7 +14,7 @@
         <AssemblyName>Soenneker.Porkbun.Client</AssemblyName>
         <PackageId>Soenneker.Porkbun.Client</PackageId>
         <PackageTags>porkbun client httpclient domain registration porkbunclientutil util csharp dotnet c# .net</PackageTags>
-        <Copyright>Copyright © 2025 Jake Soenneker</Copyright>
+        <Copyright>Copyright © 2025-2026 Jake Soenneker</Copyright>
         <Authors>Jake Soenneker</Authors>
         <Company>https://soenneker.com</Company>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>

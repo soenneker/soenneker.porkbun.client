@@ -19,7 +19,8 @@ public sealed class PorkbunClientUtil : IPorkbunClientUtil
 
     public ValueTask<HttpClient> Get(CancellationToken cancellationToken = default)
     {
-        return _httpClientCache.Get(nameof(PorkbunClientUtil), () => null, cancellationToken);
+        // No closure: static lambda with no state needed
+        return _httpClientCache.Get(nameof(PorkbunClientUtil), static () => (HttpClientOptions?)null, cancellationToken);
     }
 
     public void Dispose()

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Net.Http;
+﻿using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
 using Soenneker.Porkbun.Client.Abstract;
@@ -12,6 +11,8 @@ public sealed class PorkbunClientUtil : IPorkbunClientUtil
 {
     private readonly IHttpClientCache _httpClientCache;
 
+    private const string _httpClientName = nameof(PorkbunClientUtil);
+
     public PorkbunClientUtil(IHttpClientCache httpClientCache)
     {
         _httpClientCache = httpClientCache;
@@ -20,16 +21,16 @@ public sealed class PorkbunClientUtil : IPorkbunClientUtil
     public ValueTask<HttpClient> Get(CancellationToken cancellationToken = default)
     {
         // No closure: static lambda with no state needed
-        return _httpClientCache.Get(nameof(PorkbunClientUtil), static () => (HttpClientOptions?)null, cancellationToken);
+        return _httpClientCache.Get(_httpClientName, cancellationToken);
     }
 
     public void Dispose()
     {
-        _httpClientCache.RemoveSync(nameof(PorkbunClientUtil));
+        _httpClientCache.RemoveSync(_httpClientName);
     }
 
     public ValueTask DisposeAsync()
     {
-        return _httpClientCache.Remove(nameof(PorkbunClientUtil));
+        return _httpClientCache.Remove(_httpClientName);
     }
 }

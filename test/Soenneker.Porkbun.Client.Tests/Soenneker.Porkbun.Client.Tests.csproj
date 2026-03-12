@@ -27,7 +27,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\..\src\Soenneker.Porkbun.Client.csproj" />
+        <ProjectReference Include="..\..\src\Soenneker.Porkbun.Client\Soenneker.Porkbun.Client.csproj" />
     </ItemGroup>
 
     <ItemGroup>

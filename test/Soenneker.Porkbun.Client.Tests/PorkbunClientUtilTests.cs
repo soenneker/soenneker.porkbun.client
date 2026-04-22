@@ -1,20 +1,19 @@
-﻿using Soenneker.Porkbun.Client.Abstract;
-using Soenneker.Tests.FixturedUnit;
-using Xunit;
+using Soenneker.Porkbun.Client.Abstract;
+using Soenneker.Tests.HostedUnit;
 
 namespace Soenneker.Porkbun.Client.Tests;
 
-[Collection("Collection")]
-public class PorkbunClientUtilTests : FixturedUnitTest
+[ClassDataSource<Host>(Shared = SharedType.PerTestSession)]
+public class PorkbunClientUtilTests : HostedUnitTest
 {
     private readonly IPorkbunClientUtil _util;
 
-    public PorkbunClientUtilTests(Fixture fixture, ITestOutputHelper output) : base(fixture, output)
+    public PorkbunClientUtilTests(Host host) : base(host)
     {
         _util = Resolve<IPorkbunClientUtil>(true);
     }
 
-    [Fact]
+    [Test]
     public void Default()
     {
 

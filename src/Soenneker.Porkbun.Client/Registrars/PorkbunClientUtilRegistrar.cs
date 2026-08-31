@@ -6,7 +6,7 @@ using Soenneker.Utils.HttpClientCache.Registrar;
 namespace Soenneker.Porkbun.Client.Registrars;
 
 /// <summary>
-/// A .NET thread-safe singleton HttpClient for Porkbun
+/// Registers the Porkbun JSON API client provider.
 /// </summary>
 public static class PorkbunClientUtilRegistrar
 {

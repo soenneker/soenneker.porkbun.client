@@ -11,6 +11,7 @@ using Soenneker.Utils.HttpClientCache.Abstract;
 
 namespace Soenneker.Porkbun.Client;
 
+/// <inheritdoc cref="IPorkbunClientUtil" />
 public sealed class PorkbunClientUtil : IPorkbunClientUtil
 {
     private readonly IHttpClientCache _httpClientCache;

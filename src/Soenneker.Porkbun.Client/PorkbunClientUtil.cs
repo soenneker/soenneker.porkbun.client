@@ -31,8 +31,8 @@ public sealed class PorkbunClientUtil : IPorkbunClientUtil
             BaseAddress = new Uri(configuration["Porkbun:ClientBaseUrl"] ?? "https://api.porkbun.com/api/json/v3/"),
             DefaultRequestHeaders = new Dictionary<string, string>
             {
-                ["X-API-Key"] = configuration.GetValueStrict<string>("Porkbun:ApiKey"),
-                ["X-Secret-API-Key"] = configuration.GetValueStrict<string>("Porkbun:SecretApiKey")
+                ["X-API-Key"] = configuration.GetStringStrict("Porkbun:ApiKey"),
+                ["X-Secret-API-Key"] = configuration.GetStringStrict("Porkbun:SecretApiKey")
             }
         }, cancellationToken);
     }
